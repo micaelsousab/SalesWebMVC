@@ -7,6 +7,10 @@ namespace SalesWebMVC.Models
 {
     public class Department
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public ICollection<Seller> Sellers { get; set; } = new List<Seller>();
+
         public Department()
         {
 
@@ -17,10 +21,6 @@ namespace SalesWebMVC.Models
             Id = id;
             Name = name;
         }
-
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public ICollection<Seller> Sellers { get; set; } = new List<Seller>();
 
         public void AddSeller(Seller seller)
         {
